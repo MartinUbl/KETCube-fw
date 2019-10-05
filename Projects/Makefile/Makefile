@@ -285,4 +285,3 @@ debugMI2: $(OUTDIR)$(TARGET).elf.dbg
 # Signaling "DONE" on most Linux systems
 sigdone:
 	@echo "ALL DONE"
-	@paplay /usr/share/sounds/freedesktop/stereo/complete.oga
