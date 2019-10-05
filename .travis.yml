@@ -10,3 +10,4 @@ addons:
       
 script:
   - cd Projects/Makefile && make
+  - make indent
