@@ -1,0 +1,9 @@
+language: c
+
+addons:
+  apt:
+    packages:
+      - arm-none-eabi-gcc
+      
+script:
+  - cd Projects/Makefile && make
