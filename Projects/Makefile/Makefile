@@ -94,7 +94,7 @@ INCLUDE = $(addprefix -I, $(INC_DIRS))
 
 ###################################################
 
-CFLAGS   = -Wall  -Wno-missing-braces -g -mthumb -mcpu=cortex-m0plus -fdiagnostics-color=auto $(OPTIMIZE)
+CFLAGS   = -Wall  -Wno-missing-braces -g -std=gnu99 -mthumb -mcpu=cortex-m0plus -fdiagnostics-color=auto $(OPTIMIZE)
 CFLAGS  += -march=armv6-m -mlittle-endian -Wl,--gc-sections -TSTM32L072CZYx_FLASH.ld $(DEBUG)
 CFLAGS  += -DSTM32L082xx -DUSE_B_L082Z_KETCube -DUSE_HAL_DRIVER -DREGION_EU868
 
