@@ -6,6 +6,7 @@ addons:
       - gcc-arm-none-eabi
       - binutils-arm-none-eabi
       - gdb-arm-none-eabi
+      - libnewlib-arm-none-eabi
       
 script:
   - cd Projects/Makefile && make
