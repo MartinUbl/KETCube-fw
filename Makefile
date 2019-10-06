@@ -8,4 +8,4 @@ indent:
 
 indent_check:
 	@echo "Checking files indentation according to set rules ..."
-	@./supportTools/indent.sh showdiff
+	@./supportTools/indent.sh detect

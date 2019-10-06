@@ -102,7 +102,12 @@ for SUBDIR in $SUBDIRS; do
 	for file in $( ls $SUBDIR ); do
 		if [ $DRY -eq 1 ]; then
 			# dry run: just verify, that the file is indented; optionally show differences between indented and non-indented version
-			cat $SUBDIR/$file | dos2unix | $INDENT_CMD | diff $SUBDIR/$file - >&3 2>&3 || ( echo "INDENT: file $SUBDIR/$file is not indented according to given rules" && SUCCESS=0 )
+			cat $SUBDIR/$file | dos2unix | $INDENT_CMD | diff $SUBDIR/$file - >&3 2>&3
+			RC=$?
+			if [ $RC -ne 0 ]; then
+				(echo "INDENT: file $SUBDIR/$file is not indented according to given rules")
+				SUCCESS=0
+			fi
 		else
 			# regular run: indent files and overwrite original ones; delete temporary "old" copy the indent tool makes
 			dos2unix $SUBDIR/$file >/dev/null 2>&1
