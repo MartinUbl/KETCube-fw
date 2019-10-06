@@ -12,4 +12,5 @@ addons:
       
 script:
   - make indent_check
+  - make doc_check
   - cd Projects/Makefile && make
