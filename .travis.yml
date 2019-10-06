@@ -11,5 +11,5 @@ addons:
       - dos2unix
       
 script:
-  - make indent
+  - make indent_check
   - cd Projects/Makefile && make
