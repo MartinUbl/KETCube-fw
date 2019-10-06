@@ -9,6 +9,7 @@ addons:
       - libnewlib-arm-none-eabi
       - indent
       - dos2unix
+      - doxygen
       
 script:
   - make indent_check
