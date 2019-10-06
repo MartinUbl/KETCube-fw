@@ -3,7 +3,8 @@ doc:
 
 doc_check:
 	( cat Doxyfile ; echo "WARN_LOGFILE = DoxyWarnings.log" ) | doxygen -
-	@exit $$(wc -l DoxyWarnings.log)
+	@[ -f DoxyWarnings.log ] && cat DoxyWarnings.log >&2
+	@test ! -s DoxyWarnings.log
 
 clean:
 	rm docs/html/*
